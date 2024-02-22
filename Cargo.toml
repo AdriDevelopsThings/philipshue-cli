@@ -1,6 +1,6 @@
 [package]
 name = "philipshue-cli"
-version = "0.1.0"
+version = "0.2.0"
 repository = "https://github.com/adridevelopsthings/philipshue-cli"
 authors = ["AdriDoesThings <contact@adridoesthings.com>"]
 description = "A cli interface for the philipshue api"
@@ -19,6 +19,7 @@ serde = { version = "1", features = ["derive"] }
 thiserror = "1"
 tokio = { version = "1", features = ["full"] }
 toml = "0"
+whoami = "1"
 
 [profile.release]
 opt-level = 3

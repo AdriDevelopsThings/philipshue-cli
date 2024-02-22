@@ -21,13 +21,13 @@ pub enum Commands {
         #[arg(
             short,
             long,
-            help = "Set the device type to any string. The bridge will associate your credentials with this string."
+            help = "Set the device type to any string. The bridge will associate your credentials with this string. If you don't set the device-type USERNAME@HOSTNAME will be used"
         )]
-        device_type: String,
+        device_type: Option<String>,
     },
     #[command(about = "Get all data including it's state from a light.")]
     GetLight {
-        #[arg(short, long, help = "The light number or light name.")]
+        #[arg(help = "The light number or light name.")]
         light: String,
     },
     #[command(about = "List all lights, their light number and name.")]
@@ -56,7 +56,7 @@ pub enum Commands {
 
 #[derive(ClapArgs, Clone)]
 pub struct ChangeStateArgs {
-    #[arg(short, long, help = "The light number or light name.")]
+    #[arg(help = "The light number or light name.")]
     pub light: String,
     #[arg(short, long)]
     pub brightness: Option<u8>,

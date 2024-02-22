@@ -35,21 +35,21 @@ Options:
 ```
 Login to the hue bridge.
 
-Usage: philipshue-cli login [OPTIONS] --device-type <DEVICE_TYPE>
+Usage: philipshue-cli login [OPTIONS]
 
 Options:
-  -b, --bridge-url <BRIDGE_URL>    Set the bridge url if discovering is not possible or doesn't work. (not required)
-  -d, --device-type <DEVICE_TYPE>  Set the device type to any string. The bridge will associate your credentials with this string.
+  -b, --bridge-url <BRIDGE_URL>    Set the bridge url if discovering is not possible or doesn't work.
+  -d, --device-type <DEVICE_TYPE>  Set the device type to any string. The bridge will associate your credentials with this string. If you don't set the device-type USERNAME@HOSTNAME will be used
 ```
 
 ## Get light
 ```
 Get all data including it's state from a light.
 
-Usage: philipshue-cli get-light --light <LIGHT>
+Usage: philipshue-cli get-light <LIGHT>
 
-Options:
-  -l, --light <LIGHT>  The light number or light name.
+Arguments:
+  <LIGHT>  The light number or light name.
 ```
 
 ## List lights
@@ -70,25 +70,29 @@ Usage: philipshue-cli get-lights
 ```
 Change the state (like if the light is on or off) of a light.
 
-Usage: philipshue-cli change-state [OPTIONS] --light <LIGHT>
+Usage: philipshue-cli change-state [OPTIONS] <LIGHT>
+
+Arguments:
+  <LIGHT>  The light number or light name.
 
 Options:
-  -l, --light <LIGHT>                      The light number or light name.
-  -s, --state <STATE>                      [possible values: on, off]
   -b, --brightness <BRIGHTNESS>            
       --saturation <SATURATION>            
       --hue <HUE>                          
   -t, --transition-time <TRANSITION_TIME>  Transition time in seconds.
+  -s, --state <STATE>                      [possible values: on, off]
 ```
 
 ## Stay on
 ```
 Turn the light on and (re-)set the state for n seconds every transition-time, if set, otherwise 10 seconds.
 
-Usage: philipshue-cli stay-on [OPTIONS] --light <LIGHT> --stay-on-for <STAY_ON_FOR>
+Usage: philipshue-cli stay-on [OPTIONS] --stay-on-for <STAY_ON_FOR> <LIGHT>
+
+Arguments:
+  <LIGHT>  The light number or light name.
 
 Options:
-  -l, --light <LIGHT>                      The light number or light name.
   -b, --brightness <BRIGHTNESS>            
       --saturation <SATURATION>            
       --hue <HUE>                          
