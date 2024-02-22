@@ -53,7 +53,9 @@ async fn main() -> anyhow::Result<()> {
         // login to bridge
         let device_type = match device_type {
             Some(d) => d,
-            None => whoami::username() + "@" + &whoami::hostname(),
+            None => {
+                format!("cli#{}", whoami::hostname())
+            }
         };
         match bridge.login_to_hue(DeviceType::new(device_type)).await {
             Ok(hue) => Ok(environment.set_hue(hue).await?),
