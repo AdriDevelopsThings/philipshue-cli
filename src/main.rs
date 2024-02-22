@@ -125,7 +125,7 @@ async fn main() -> anyhow::Result<()> {
         let stay_on_for_duration = Duration::from_secs(stay_on_for);
         // wait after each loop iteration for transition_time, if set, or otherwise 10 seconds
         let loop_interval =
-            Duration::from_secs(change_state_args.transition_time.unwrap_or(10) as u64);
+            Duration::from_secs(change_state_args.transition_time.unwrap_or(100) as u64 / 10);
         let start = Instant::now();
         println!("Starting stay on loop for {stay_on_for} seconds.");
         loop {

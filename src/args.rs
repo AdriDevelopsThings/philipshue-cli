@@ -21,7 +21,7 @@ pub enum Commands {
         #[arg(
             short,
             long,
-            help = "Set the device type to any string. The bridge will associate your credentials with this string. If you don't set the device-type USERNAME@HOSTNAME will be used"
+            help = "Set the device type to any string. The bridge will associate your credentials with this string. If you don't set the device-type cli@HOSTNAME will be used"
         )]
         device_type: Option<String>,
     },
