@@ -7,6 +7,12 @@ Download the binary from the releasese page for your operating system or install
 cargo install --git https://github.com/adridevelopsthings/philipshue-cli
 ```
 
+### AUR
+If you're using arch linux you can get the philipshue-cli from the [AUR](https://aur.archlinux.org/packages/philipshue-cli):
+```
+yay -S philipshue-cli
+```
+
 ### Docker
 It's also possible to run philipshue-cli with docker:
 
