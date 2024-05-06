@@ -54,7 +54,10 @@ async fn main() -> anyhow::Result<()> {
         let device_type = match device_type {
             Some(d) => d,
             None => {
-                format!("cli#{}", whoami::hostname())
+                format!(
+                    "cli#{}",
+                    whoami::fallible::hostname().expect("Error while getting hostname")
+                )
             }
         };
         match bridge.login_to_hue(DeviceType::new(device_type)).await {
