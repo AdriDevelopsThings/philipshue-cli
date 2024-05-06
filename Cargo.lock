@@ -571,8 +571,8 @@ checksum = "e3148f5046208a5d56bcfc03053e3ca6334e51da8dfb19b6cdc8b306fae3283e"
 
 [[package]]
 name = "philipshue"
-version = "0.2.5"
-source = "git+https://github.com/adridevelopsthings/philipshue-rs#d9a071d0289752513693dc66f299c5497415a4d2"
+version = "0.2.6"
+source = "git+https://github.com/adridevelopsthings/philipshue-rs#813d0cdf7f3de403427a9497f2f30c2dba4824b6"
 dependencies = [
  "async-trait",
  "reqwest",
@@ -583,7 +583,7 @@ dependencies = [
 
 [[package]]
 name = "philipshue-cli"
-version = "0.2.2"
+version = "0.2.4"
 dependencies = [
  "anyhow",
  "clap",
